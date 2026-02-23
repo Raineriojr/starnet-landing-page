@@ -38,11 +38,6 @@ export function Header() {
             </a>
           </li>
           <li>
-            <a href="#avaliacao" className="hover:text-gold transition-colors">
-              Avaliações
-            </a>
-          </li>
-          <li>
             <a href="#contato" className="hover:text-gold transition-colors">
               Contato
             </a>
