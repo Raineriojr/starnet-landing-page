@@ -20,17 +20,17 @@ export function Hero() {
 
         <div className="flex flex-col gap-2">
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
-            Conectividade
+            Excelência em
           </h1>
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-gold">
-            Ultra-Rápida
+            Conectividade e Soluções Tecnológicas
           </h1>
         </div>
 
         <p className="text-gray-300 text-lg leading-relaxed">
-          Chega de quedas e lentidão. Com a Starnet, você tem internet rápida,
-          estável e segura para trabalhar, jogar e conectar tudo ao seu mundo
-          digital.
+          Especialistas em conectar, proteger e impulsionar negócios por meio de
+          soluções integradas em internet de alta performance e tecnologia
+          corporativa.
         </p>
       </div>
     </section>
