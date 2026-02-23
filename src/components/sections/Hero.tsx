@@ -25,7 +25,7 @@ export function Hero() {
       <motion.div
         variants={backGroundVariants}
         initial="hidden"
-        animate="visible"
+        whileInView="visible"
         className="absolute inset-0 bg-[url('/background.jpg')] bg-fill md:bg-cover bg-top lg:bg-fixed"
       />
 
@@ -33,7 +33,7 @@ export function Hero() {
       <motion.div
         variants={overlayVariants}
         initial="hidden"
-        animate="visible"
+        whileInView="visible"
         transition={{ duration: 1.5 }}
         className="absolute inset-0 bg-black"
       />
@@ -41,11 +41,13 @@ export function Hero() {
       <motion.div
         variants={containerVariants}
         initial="hidden"
-        animate="visible"
+        whileInView="visible"
         className="relative z-10 max-w-4xl text-center space-y-8"
       >
         <motion.p
           variants={titleVariants}
+          initial="hidden"
+          whileInView="visible"
           className="text-gold text-xl font-bold tracking-[0.2em] uppercase"
         >
           Bem-vindo à Starnet
@@ -64,6 +66,8 @@ export function Hero() {
 
         <motion.p
           variants={titleVariants}
+          initial="hidden"
+          whileInView="visible"
           className="text-gray-300 text-xl font-medium leading-relaxed max-w-2xl mx-auto"
         >
           Especialistas em conectar, proteger e impulsionar negócios por meio de
