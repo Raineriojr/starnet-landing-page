@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { MapPin, Mail, Phone, Copy } from "lucide-react";
-import { FOOTER_LINKS, SOCIAL_LINKS, CONTACT_INFO } from "../../data";
+import { FOOTER_LINKS, CONTACT_INFO } from "../../data";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -28,7 +28,7 @@ export function Footer() {
             Pioneirismo no futuro da conectividade digital com serviço de padrão
             ouro.
           </p>
-          <div className="flex gap-4">
+          {/* <div className="flex gap-4">
             {SOCIAL_LINKS.map((social, index) => (
               <a
                 key={index}
@@ -38,7 +38,7 @@ export function Footer() {
                 <social.icon size={20} />
               </a>
             ))}
-          </div>
+          </div> */}
         </div>
 
         {/* Quick Links */}
