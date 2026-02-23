@@ -1,4 +1,7 @@
+import * as motion from "motion/react-client";
+
 import { MobileNav } from "./MobileNav";
+import { headerVariants } from "@/animations/header";
 
 export function Header() {
   const currentYear = new Date().getFullYear();
@@ -14,7 +17,12 @@ export function Header() {
   }
 
   return (
-    <header className="px-6 border-b border-border sticky top-0 bg-black/40 backdrop-blur-md z-50">
+    <motion.header
+      variants={headerVariants}
+      initial="hidden"
+      animate="visible"
+      className="px-6 border-b border-border sticky top-0 bg-black/40 backdrop-blur-md z-50"
+    >
       <nav className="flex items-center justify-between py-4 md:py-6 w-full">
         <div className="relative w-30 md:w-40 h-full">
           <img
@@ -47,6 +55,6 @@ export function Header() {
         {/* Mobile Navigation */}
         <MobileNav currentYear={currentYear} onNavigate={scrollTo} />
       </nav>
-    </header>
+    </motion.header>
   );
 }
