@@ -176,9 +176,9 @@ export const SOCIAL_LINKS = [
 
 export const FOOTER_LINKS = {
   navigation: [
+    { label: "Início", href: "#inicio" },
     { label: "Sobre Nós", href: "#sobre" },
     { label: "Nossos Serviços", href: "#servicos" },
-    { label: "Avaliações", href: "#avaliacao" },
     { label: "Contato", href: "#contato" },
   ],
   legal: [

@@ -36,6 +36,11 @@ export function Header() {
         {/* Desktop Navigation */}
         <ul className="hidden md:flex items-center gap-12 text-base font-medium">
           <li>
+            <a href="#inicio" className="hover:text-gold transition-colors">
+              Início
+            </a>
+          </li>
+          <li>
             <a href="#sobre" className="hover:text-gold transition-colors">
               Sobre
             </a>
