@@ -115,7 +115,7 @@ export function About() {
               <motion.div key={index} variants={aboutItemVariants}>
                 <Card
                   onClick={() => handleCardClick(index)}
-                  className={`bg-card border-none transition-all duration-500 p-8 flex flex-col items-center text-center gap-4 group min-h-[220px] justify-center relative overflow-hidden cursor-pointer h-full ${
+                  className={`bg-card border-none transition-all duration-500 p-2 md:p-6 flex flex-col items-center text-center gap-4 group min-h-[220px] justify-center relative overflow-hidden cursor-pointer h-full ${
                     isActive ? "bg-white/10" : "hover:bg-white/5"
                   }`}
                 >

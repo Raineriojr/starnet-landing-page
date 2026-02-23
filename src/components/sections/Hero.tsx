@@ -68,7 +68,7 @@ export function Hero() {
           variants={titleVariants}
           initial="hidden"
           whileInView="visible"
-          className="text-gray-300 text-xl font-medium leading-relaxed max-w-2xl mx-auto"
+          className="text-gray-300 text-lg font-medium leading-relaxed max-w-2xl mx-auto"
         >
           Especialistas em conectar, proteger e impulsionar negócios por meio de
           soluções integradas em internet de alta performance e tecnologia
