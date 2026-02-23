@@ -1,8 +1,16 @@
-import { MapPin, Mail, Phone } from "lucide-react";
+import { useState } from "react";
+import { MapPin, Mail, Phone, Copy } from "lucide-react";
 import { FOOTER_LINKS, SOCIAL_LINKS, CONTACT_INFO } from "../../data";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(CONTACT_INFO.phone);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
 
   return (
     <footer className="px-6 md:px-20 border-t border-white/10 py-20 pb-10 bg-black text-white">
@@ -68,7 +76,7 @@ export function Footer() {
         </div>
 
         {/* Contact Info */}
-        <div>
+        <div className="select-text">
           <h3 className="font-bold mb-6 text-lg text-gold">Contato</h3>
           <ul className="space-y-2 text-gray-400">
             <li className="flex items-start gap-3">
@@ -79,9 +87,24 @@ export function Footer() {
                 {CONTACT_INFO.city}
               </span>
             </li>
-            <li className="flex items-center gap-3">
-              <Phone size={20} className="text-gold shrink-0" />
-              <span>{CONTACT_INFO.phone}</span>
+            <li className="flex items-center gap-3 relative">
+              <button
+                onClick={handleCopy}
+                className="flex items-center gap-3 hover:text-gold transition-all group/footer-phone"
+                title="Clique para copiar"
+              >
+                <Phone size={20} className="text-gold shrink-0" />
+                <span>{CONTACT_INFO.phone}</span>
+                <Copy
+                  size={14}
+                  className="opacity-0 group-hover/footer-phone:opacity-100 transition-opacity"
+                />
+                {copied && (
+                  <span className="absolute -top-8 left-1/2 -translate-x-1/2 bg-gold text-black text-[10px] py-0.5 px-1.5 rounded font-bold animate-in fade-in zoom-in-95">
+                    Copiado!
+                  </span>
+                )}
+              </button>
             </li>
             <li className="flex items-center gap-3">
               <Mail size={20} className="text-gold shrink-0" />
@@ -91,7 +114,6 @@ export function Footer() {
         </div>
       </div>
 
-      {/* ... Copyright ... */}
       <div className="pt-8 border-t border-white/10 text-center text-gray-500 text-sm flex justify-center items-center gap-4">
         <p>
           &copy; {currentYear} Starnet Telecom. Todos os direitos reservados.

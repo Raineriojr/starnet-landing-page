@@ -162,10 +162,10 @@ export const ABOUT_FEATURES = [
 ];
 
 export const CONTACT_INFO = {
-  address: "Av. Paulista, 1000",
-  city: "São Paulo - SP",
-  phone: "0800 123 4567",
-  email: "contato@starnet.com.br",
+  address: "AVENIDA ARTHUR ROQUE, 1419, CONGÓS.",
+  city: "Macapá - AP",
+  phone: "(96) 98104-4966",
+  email: "adm@starnet.dev.br",
 };
 
 export const SOCIAL_LINKS = [
