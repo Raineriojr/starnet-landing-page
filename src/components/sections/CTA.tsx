@@ -1,7 +1,6 @@
-import { useState } from "react";
 import * as motion from "motion/react-client";
 import { Button } from "../ui";
-import { Phone, Check, ArrowRight, MessageCircle, Copy } from "lucide-react";
+import { Check, ArrowRight, MessageCircle } from "lucide-react";
 import { CONTACT_INFO, PLAN_ITEMS } from "../../data";
 import {
   ctaContainerVariants,
@@ -12,14 +11,6 @@ import {
 } from "@/animations/cta";
 
 export function CTA() {
-  const [copied, setCopied] = useState(false);
-
-  const handleCopy = () => {
-    navigator.clipboard.writeText(CONTACT_INFO.phone);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
-
   return (
     <section id="contato" className="py-24 px-6 md:px-20 overflow-hidden">
       <motion.div
@@ -79,24 +70,6 @@ export function CTA() {
                   Chamar no WhatsApp
                 </Button>
               </a>
-
-              <button
-                onClick={handleCopy}
-                className="flex items-center gap-3 text-black/90 font-bold text-lg px-6 hover:text-white transition-all group/phone relative"
-                title="Clique para copiar"
-              >
-                <Phone size={24} />
-                <span>{CONTACT_INFO.phone}</span>
-                <Copy
-                  size={16}
-                  className="opacity-0 group-hover/phone:opacity-100 transition-opacity ml-1"
-                />
-                {copied && (
-                  <span className="absolute -top-8 left-1/2 -translate-x-1/2 bg-black text-white text-xs py-1 px-2 rounded animate-in fade-in slide-in-from-bottom-2">
-                    Copiado!
-                  </span>
-                )}
-              </button>
             </motion.div>
           </div>
 
