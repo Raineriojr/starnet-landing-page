@@ -1,7 +1,15 @@
 import { useState } from "react";
+import * as motion from "motion/react-client";
 import { Button } from "../ui";
 import { Phone, Check, ArrowRight, MessageCircle, Copy } from "lucide-react";
-import { CONTACT_INFO } from "../../data";
+import { CONTACT_INFO, PLAN_ITEMS } from "../../data";
+import {
+  ctaContainerVariants,
+  pricingCardVariants,
+  ctaTitleVariants,
+  ctaDescriptionVariants,
+  ctaButtonVariants,
+} from "@/animations/cta";
 
 export function CTA() {
   const [copied, setCopied] = useState(false);
@@ -11,22 +19,47 @@ export function CTA() {
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
+
   return (
-    <section id="contato" className="py-24 px-6 md:px-20">
-      <div className="bg-gold rounded-4xl p-6 md:p-16 relative overflow-hidden shadow-2xl">
+    <section id="contato" className="py-24 px-6 md:px-20 overflow-hidden">
+      <motion.div
+        variants={ctaContainerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        className="bg-gold rounded-4xl p-6 md:p-16 relative overflow-hidden shadow-2xl"
+      >
         <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-12">
-          <div className="flex-1 space-y-8 text-center lg:text-left">
+          <div className="flex-1 space-y-8 text-center lg:text-left order-2 lg:order-1">
             <div>
-              <h2 className="text-4xl md:text-5xl font-bold text-black mb-4 tracking-tight">
+              <motion.h2
+                variants={ctaTitleVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                className="text-4xl md:text-5xl font-bold text-black mb-4 tracking-tight"
+              >
                 Pronto para acelerar?
-              </h2>
-              <p className="text-black/80 text-lg md:text-xl max-w-xl font-medium leading-snug">
+              </motion.h2>
+              <motion.p
+                variants={ctaDescriptionVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                className="text-black/80 text-lg md:text-xl max-w-xl font-medium leading-snug"
+              >
                 Leve a ultra-velocidade da Starnet para sua casa ou empresa.
                 Atendimento personalizado e instalação rápida.
-              </p>
+              </motion.p>
             </div>
 
-            <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
+            <motion.div
+              variants={ctaButtonVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start"
+            >
               <a
                 href={`https://wa.me/55${CONTACT_INFO.phone.replace(/\D/g, "")}`}
                 target="_blank"
@@ -64,11 +97,17 @@ export function CTA() {
                   </span>
                 )}
               </button>
-            </div>
+            </motion.div>
           </div>
 
           {/* Pricing Card */}
-          <div className="relative w-full max-w-md">
+          <motion.div
+            variants={pricingCardVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="relative w-full max-w-md order-1 lg:order-2"
+          >
             <div className="absolute -inset-1 bg-black/5 rounded-4xl blur-md transform translate-y-4" />
             <div className="bg-black text-white p-8 md:p-10 rounded-4xl shadow-2xl relative border border-white/10">
               <div className="absolute top-0 right-0 p-6 opacity-20">
@@ -82,7 +121,7 @@ export function CTA() {
                 <div className="flex items-baseline gap-1">
                   <span className="text-gray-400 text-lg">A partir de</span>
                 </div>
-                <div className="flex items-baseline gap-2">
+                <div className="flex items-baseline gap-2 hover:scale-105 transition-transform">
                   <span className="text-sm align-top mt-2">R$</span>
                   <span className="text-5xl md:text-6xl font-bold text-white tracking-tighter">
                     99
@@ -97,13 +136,11 @@ export function CTA() {
               </div>
 
               <ul className="space-y-4 mb-2 md:mb-8 border-t border-white/10 pt-2 md:pt-6">
-                {[
-                  "Instalação Grátis",
-                  "Wi-Fi 6 de Alta Performance",
-                  "Apps de Streaming Inclusos",
-                  "Suporte 24h Premium",
-                ].map((item, i) => (
-                  <li key={i} className="flex items-center gap-3 text-gray-300">
+                {PLAN_ITEMS.map((item, i) => (
+                  <li
+                    key={i}
+                    className="flex items-center gap-3 text-gray-300 hover:scale-105 transition-transform"
+                  >
                     <div className="bg-gold/20 p-1 rounded-full">
                       <Check size={14} className="text-gold" />
                     </div>
@@ -112,9 +149,9 @@ export function CTA() {
                 ))}
               </ul>
             </div>
-          </div>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

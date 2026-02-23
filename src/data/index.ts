@@ -187,3 +187,9 @@ export const FOOTER_LINKS = {
     { label: "Contrato de Serviço", href: "#" },
   ],
 };
+
+export const PLAN_ITEMS = [
+  "Instalação Grátis",
+  "Wi-Fi de Alta Performance",
+  "Suporte 24h Premium",
+];
