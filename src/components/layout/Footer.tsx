@@ -1,6 +1,13 @@
 import { useState } from "react";
+import * as motion from "motion/react-client";
 import { MapPin, Mail, Phone, Copy } from "lucide-react";
 import { FOOTER_LINKS, CONTACT_INFO } from "../../data";
+import {
+  footerContainerVariants,
+  footerBrandVariants,
+  footerItemVariants,
+  footerBottomVariants,
+} from "@/animations/footer";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -13,10 +20,15 @@ export function Footer() {
   };
 
   return (
-    <footer className="px-6 md:px-20 border-t border-white/10 py-20 pb-10 bg-black text-white">
-      <div className="grid md:grid-cols-4 gap-12 lg:gap-20 mb-16">
-        {/* Brand Column */}
-        <div className="space-y-6">
+    <footer className="px-6 md:px-20 border-t border-white/10 py-20 pb-10 bg-black text-white overflow-hidden">
+      <motion.div
+        variants={footerContainerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-50px" }}
+        className="grid md:grid-cols-4 gap-12 lg:gap-20 mb-16"
+      >
+        <motion.div variants={footerBrandVariants} className="space-y-6">
           <div className="relative w-40 h-fit">
             <img
               src="/logo.png"
@@ -28,21 +40,9 @@ export function Footer() {
             Pioneirismo no futuro da conectividade digital com serviço de padrão
             ouro.
           </p>
-          {/* <div className="flex gap-4">
-            {SOCIAL_LINKS.map((social, index) => (
-              <a
-                key={index}
-                href={social.href}
-                className="p-2 bg-white/5 rounded-full hover:bg-gold hover:text-black transition-all duration-300"
-              >
-                <social.icon size={20} />
-              </a>
-            ))}
-          </div> */}
-        </div>
+        </motion.div>
 
-        {/* Quick Links */}
-        <div>
+        <motion.div variants={footerItemVariants}>
           <h3 className="font-bold mb-6 text-lg text-gold">Navegação</h3>
           <ul className="space-y-2">
             {FOOTER_LINKS.navigation.map((link, index) => (
@@ -56,10 +56,9 @@ export function Footer() {
               </li>
             ))}
           </ul>
-        </div>
+        </motion.div>
 
-        {/* Legal */}
-        <div>
+        <motion.div variants={footerItemVariants}>
           <h3 className="font-bold mb-6 text-lg text-gold">Legal</h3>
           <ul className="space-y-2">
             {FOOTER_LINKS.legal.map((link, index) => (
@@ -73,10 +72,9 @@ export function Footer() {
               </li>
             ))}
           </ul>
-        </div>
+        </motion.div>
 
-        {/* Contact Info */}
-        <div className="select-text">
+        <motion.div variants={footerItemVariants} className="select-text">
           <h3 className="font-bold mb-6 text-lg text-gold">Contato</h3>
           <ul className="space-y-2 text-gray-400">
             <li className="flex items-start gap-3">
@@ -111,16 +109,20 @@ export function Footer() {
               <span>{CONTACT_INFO.email}</span>
             </li>
           </ul>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
 
-      <div className="pt-8 border-t border-white/10 text-center text-gray-500 text-sm flex justify-center items-center gap-4">
+      <motion.div
+        variants={footerBottomVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="pt-8 border-t border-white/10 text-center text-gray-500 text-sm flex justify-center items-center gap-4"
+      >
         <p>
           &copy; {currentYear} Starnet Telecom. Todos os direitos reservados.
         </p>
-      </div>
+      </motion.div>
     </footer>
   );
 }
-
-// Redoing the replacement content to be fully correct and complete.
