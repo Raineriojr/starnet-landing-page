@@ -136,24 +136,28 @@ export const TESTIMONIALS = [
 
 export const ABOUT_FEATURES = [
   {
-    icon: "🌍",
-    title: "Rede Global",
-    description: "Conexão mundial",
+    icon: "⚙️",
+    title: "Infraestrutura Própria de Alta Capacidade e Escalabilidade",
+    description:
+      "Backbone robusto com rede própria, alta redundância e capacidade preparada para crescimento contínuo e operações críticas.",
   },
   {
-    icon: "🎧",
-    title: "Suporte 24/7",
-    description: "Assistência especializada",
+    icon: "🕒",
+    title: "Monitoramento 24/7 com SLA e Alta Disponibilidade",
+    description:
+      "Supervisão contínua da rede e dos serviços, com indicadores de desempenho, resposta rápida e garantia de disponibilidade.",
   },
   {
     icon: "🛡️",
-    title: "Nós Criptografados",
-    description: "Segurança total",
+    title: "Segurança da Informação com Proteção Multicamadas",
+    description:
+      "Firewall avançado, criptografia, controle de acesso e políticas de segurança para garantir integridade, confidencialidade e disponibilidade dos dados.",
   },
   {
-    icon: "🍃",
-    title: "Carbono Neutro",
-    description: "Sustentabilidade",
+    icon: "☁️",
+    title: "Cloud Computing e Automação Inteligente",
+    description:
+      "Infraestrutura em nuvem escalável, virtualização de ambientes e soluções de automação residencial e corporativa integradas para máxima eficiência operacional.",
   },
 ];
 
