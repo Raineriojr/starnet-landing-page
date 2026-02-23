@@ -1,8 +1,16 @@
+import { useState } from "react";
 import { Button } from "../ui";
-import { Phone, Check, ArrowRight, MessageCircle } from "lucide-react";
+import { Phone, Check, ArrowRight, MessageCircle, Copy } from "lucide-react";
 import { CONTACT_INFO } from "../../data";
 
 export function CTA() {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(CONTACT_INFO.phone);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
   return (
     <section id="contato" className="py-24 px-6 md:px-20">
       <div className="bg-gold rounded-4xl p-6 md:p-16 relative overflow-hidden shadow-2xl">
@@ -19,24 +27,43 @@ export function CTA() {
             </div>
 
             <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
-              <Button
-                variant="outline"
-                className="bg-black text-white hover:bg-black/80 border-transparent h-10 md:h-14 px-4 md:px-8 rounded-full text-base md:text-lg gap-2 shadow-lg hover:scale-105 transition-transform"
+              <a
+                href={`https://wa.me/55${CONTACT_INFO.phone.replace(/\D/g, "")}`}
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                <div className="bg-green-500 rounded-full p-1">
-                  <MessageCircle
-                    size={18}
-                    fill="white"
-                    className="text-white"
-                  />
-                </div>
-                Chamar no WhatsApp
-              </Button>
+                <Button
+                  variant="outline"
+                  className="bg-black text-white hover:bg-black/80 border-transparent h-10 md:h-14 px-4 md:px-8 rounded-full text-base md:text-lg gap-2 shadow-lg hover:scale-105 transition-transform"
+                >
+                  <div className="bg-green-500 rounded-full p-1">
+                    <MessageCircle
+                      size={18}
+                      fill="white"
+                      className="text-white"
+                    />
+                  </div>
+                  Chamar no WhatsApp
+                </Button>
+              </a>
 
-              <div className="flex items-center gap-3 text-black/90 font-bold text-lg px-6">
+              <button
+                onClick={handleCopy}
+                className="flex items-center gap-3 text-black/90 font-bold text-lg px-6 hover:text-white transition-all group/phone relative"
+                title="Clique para copiar"
+              >
                 <Phone size={24} />
                 <span>{CONTACT_INFO.phone}</span>
-              </div>
+                <Copy
+                  size={16}
+                  className="opacity-0 group-hover/phone:opacity-100 transition-opacity ml-1"
+                />
+                {copied && (
+                  <span className="absolute -top-8 left-1/2 -translate-x-1/2 bg-black text-white text-xs py-1 px-2 rounded animate-in fade-in slide-in-from-bottom-2">
+                    Copiado!
+                  </span>
+                )}
+              </button>
             </div>
           </div>
 
