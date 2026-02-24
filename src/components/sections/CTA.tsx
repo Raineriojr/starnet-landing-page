@@ -12,7 +12,10 @@ import {
 
 export function CTA() {
   return (
-    <section id="contato" className="py-24 px-6 md:px-20 overflow-hidden">
+    <section
+      id="contato"
+      className="py-24 md:py-40 px-6 md:px-20 overflow-hidden"
+    >
       <motion.div
         variants={ctaContainerVariants}
         initial="hidden"

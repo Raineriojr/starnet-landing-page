@@ -40,7 +40,7 @@ export function About() {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "-100px" }}
-      className="py-24 md:py-32 bg-bg-secondary px-6 md:px-20 relative overflow-hidden min-h-screen my-auto"
+      className="py-24 md:py-56 bg-bg-secondary px-6 md:px-20 relative overflow-hidden min-h-screen my-auto"
     >
       <div className="absolute top-1/2 right-0 -translate-y-1/2 w-96 h-96 bg-gold/5 blur-[120px] rounded-full pointer-events-none" />
 
@@ -86,7 +86,7 @@ export function About() {
               whileInView="visible"
               className="text-text-secondary text-lg leading-relaxed max-w-xl"
             >
-              A Starnet nasceu com o propósito de levar conexão aonde ninguém
+              A Starnet nasceu com o propósito de levar conexão onde ninguém
               chegava. Superamos desafios técnicos e estruturamos redes em
               regiões remotas, entregando internet onde antes era impossível.
               Hoje, somos uma empresa de infraestrutura e soluções tecnológicas
