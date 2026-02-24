@@ -193,3 +193,30 @@ export const PLAN_ITEMS = [
   "Wi-Fi de Alta Performance",
   "Suporte 24h Premium",
 ];
+
+export const TECHNICAL_TERMS: Record<string, string> = {
+  LGPD: "Lei Geral de Proteção de Dados - Garante a privacidade e segurança das informações dos usuários.",
+  IoT: "Internet of Things - Conexão de objetos físicos à internet para automação e coleta de dados.",
+  FTTH: "Fiber to the Home - Conexão de fibra óptica que vai diretamente até a casa do cliente.",
+  APIs: "Application Programming Interfaces - Conjunto de rotinas para comunicação entre diferentes softwares.",
+  "Smart Home":
+    "Casas Inteligentes - Automação residencial para controle de luzes, segurança e eletrodomésticos.",
+  SLA: "Service Level Agreement - Acordo de Nível de Serviço que garante tempo de resposta e disponibilidade.",
+  "VLAN/VPN":
+    "Redes virtuais privadas e locais para isolamento de tráfego e acesso remoto seguro.",
+  DDoS: "Distributed Denial of Service - Proteção contra ataques que tentam derrubar sites ou serviços.",
+  "NOC 24/7":
+    "Network Operations Center - Monitoramento ininterrupto da rede para prevenir falhas.",
+  CFTV: "Circuito Fechado de Televisão - Sistemas de câmeras de segurança monitoradas.",
+  Backbone:
+    "Espinha dorsal de alta performance que sustenta o tráfego principal de rede.",
+  "Wi-Fi Pro":
+    "Wi-Fi profissional com alta densidade de usuários e maior alcance/segurança.",
+  "Portaria Remota":
+    "Sistema de segurança que permite o controle de acesso à distância por uma central.",
+  ISPs: "Internet Service Providers - Provedores de serviços de internet que conectam usuários à rede.",
+  Firewall:
+    "Barreira de segurança que monitora e controla o tráfego de rede para prevenir acessos não autorizados.",
+  "Cloud Híbrida":
+    "Modelo que combina nuvens privadas e públicas para maior flexibilidade e segurança.",
+};

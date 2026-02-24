@@ -3,6 +3,7 @@ import { ArrowUpRight } from "lucide-react";
 import { Card } from "../ui";
 import { SERVICES } from "../../data";
 import { cn } from "@/lib/utils";
+import { TechnicalTag } from "../custom/TechnicalTag";
 import { wordsContainer, wordItem } from "@/animations/hero";
 import {
   servicesContainerVariants,
@@ -19,7 +20,7 @@ export function Services() {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "-100px" }}
-      className="py-24 bg-black text-white px-6 md:px-20"
+      className="py-24 md:py-36 bg-black text-white px-6 md:px-20"
     >
       <motion.div
         variants={servicesContainerVariants}
@@ -115,12 +116,7 @@ export function Services() {
 
                   <div className="flex flex-wrap gap-2">
                     {service.tags.map((tag, idx) => (
-                      <span
-                        key={idx}
-                        className="text-xs font-medium px-3 py-1 rounded-full bg-white/5 text-text-muted border border-white/5"
-                      >
-                        {tag}
-                      </span>
+                      <TechnicalTag key={idx} tag={tag} />
                     ))}
                   </div>
                 </div>
