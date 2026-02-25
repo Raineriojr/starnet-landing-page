@@ -47,20 +47,20 @@ export function MobileNav({ currentYear, onNavigate }: MobileNavProps) {
                 <li>
                   <DrawerClose asChild>
                     <button
-                      onClick={() => onNavigate("servicos")}
+                      onClick={() => onNavigate("sobre")}
                       className="hover:text-gold transition-colors block py-2 w-full"
                     >
-                      Serviços
+                      Sobre
                     </button>
                   </DrawerClose>
                 </li>
                 <li>
                   <DrawerClose asChild>
                     <button
-                      onClick={() => onNavigate("avaliacao")}
+                      onClick={() => onNavigate("servicos")}
                       className="hover:text-gold transition-colors block py-2 w-full"
                     >
-                      Avaliações
+                      Serviços
                     </button>
                   </DrawerClose>
                 </li>
